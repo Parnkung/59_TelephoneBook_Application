@@ -1,0 +1,60 @@
+<!--
+  Generated template for the AllContact page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-toolbar color="burntamber">
+	<!--title with icon -->
+    <ion-title>
+	<ion-icon name="ios-contact" item-start></ion-icon>
+       All Contacts
+    </ion-title>
+	<!--Back Button: if clicks, go back to previous page-->
+    <ion-buttons start>
+	  <button ion-button (click)="goBack()">
+        <span ion-text color = "darkorange"><b>Back</b></span>
+      </button>
+    </ion-buttons>
+	<!--Add contact button: if click, go to create-contact page -->
+	<ion-buttons end>
+      <button ion-button (click)="addContact()" color = "darkorange">
+        <ion-icon right name="md-person-add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding style="background-color: darkslategray">
+	<ion-card>
+	<!-- Search Bar: used for seraching-->
+	<ion-searchbar (ionInput)="getName($event)"></ion-searchbar>
+	
+	<ion-list no-lines>
+	<!-- loop all contacts in database for showing on this page-->
+	<!-- with function item-slide, can slide and it will show item opt-->
+	<ion-item-sliding  *ngFor="let contact of contacts">
+		<ion-item (click) = "showAlert()" color="lemonchiffon">
+		<ion-icon color="burntamber" name ="ios-contact" item-left></ion-icon>
+		<h2 ion-text color="burntamber" ><b>{{ contact.Name }}</b></h2>
+		<p color = "darkorange">{{ contact.Tel }}</p>
+        </ion-item>
+		<!--show after slide each line, will see more button and delete button-->
+		<ion-item-options>
+			<!-- if clicks, it will go to details page-->
+			<button ion-button (click)="showDetail(contact)">
+				<ion-icon name="ios-more"></ion-icon>
+				More
+			</button>
+			<!-- if clicks, it will remove that contact-->
+			<button ion-button color="danger" (click)="deleteContact(contact)">
+				<ion-icon name="ios-trash"></ion-icon>
+				Delete
+			</button>
+		</ion-item-options>
+	</ion-item-sliding>
+	</ion-list>
+	</ion-card>
+</ion-content>

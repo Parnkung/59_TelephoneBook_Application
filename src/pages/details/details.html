@@ -1,0 +1,47 @@
+<!--
+  Generated template for the Details page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-toolbar color = "burntamber">
+    <ion-title>
+      Contact Details
+    </ion-title>
+	<!-- go back to previous page-->
+    <ion-buttons start>
+	  <button ion-button (click)="goBack()">
+        <span ion-text color = "darkorange"><b>Back</b></span>
+      </button>
+    </ion-buttons>
+	<!-- delete func-->
+	<ion-buttons end>
+	  <button ion-button (click)="deleteContact()" color = "darkorange">
+		<ion-icon name="ios-trash"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding style="background-color: darkslategray">
+	<ion-card>
+	<ion-card-content color="dark" font="17px">You can edit contact info.</ion-card-content>
+		<!-- all input box for available to edit contact info-->
+        <ion-item color="lemonchiffon">
+            <ion-label ion-text color = "burntamber"><ion-icon name="ios-contact"></ion-icon><b>Name</b></ion-label>
+            <ion-input text-right type="text" [(ngModel)]="contact.Name"></ion-input>
+        </ion-item>
+        <ion-item color="blancheAlmond">
+            <ion-label ion-text color = "burntamber"><ion-icon name="ios-call"></ion-icon><b>Phone</b></ion-label>
+			<ion-input text-right type="text" [(ngModel)]="contact.Tel" ></ion-input>
+        </ion-item>
+		<ion-item color="wheat">
+			<ion-label ion-text color = "burntamber"><ion-icon name="ios-mail"></ion-icon><b>Email</b></ion-label>
+			<ion-input text-right type="email" [(ngModel)]="contact.Email"></ion-input>
+		</ion-item>
+
+	</ion-card>
+	<!-- save function to save change-->
+    <button ion-button block (click)="save()" color="lightgold" ><b>Save Change</b></button>
+</ion-content>

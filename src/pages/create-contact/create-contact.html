@@ -1,0 +1,47 @@
+<!--
+  Generated template for the CreateContact page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-toolbar color = "burntamber">
+    <ion-title>
+      New Contacts
+    </ion-title>
+	<!-- if clicks 'Back', go back to previouse page -->
+    <ion-buttons start>
+	  <button ion-button (click)="goBack()">
+        <span ion-text color = "darkorange"><b>Cancel</b></span>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding style="background-color: darkslategray">
+ <ion-card>
+	<!-- all input boxs-->
+	<!-- [(ngModel)]="contact.attributes" used for get input data-->
+	<!-- input name-->
+  <ion-item color="lemonchiffon">
+    <ion-label ion-text color = "burntamber">
+		<ion-icon name="ios-contact"></ion-icon><b>Name</b></ion-label>
+    <ion-input text-right type="text" [(ngModel)]="contact.Name" placeholder = "Enter name" ></ion-input>
+  </ion-item>
+	<!-- input phone number-->
+  <ion-item color="blancheAlmond">
+    <ion-label ion-text color = "burntamber"><ion-icon name="ios-call"></ion-icon><b>Phone</b></ion-label>
+    <ion-input text-right type="text" [(ngModel)]="contact.Tel" placeholder = "Enter phone number"></ion-input>
+  </ion-item>
+	<!-- input email-->
+  <ion-item color="wheat">
+    <ion-label ion-text color = "burntamber"><ion-icon name="ios-mail"></ion-icon><b>Email</b></ion-label>
+    <ion-input text-right type="email" [(ngModel)]="contact.Email" placeholder = "Enter email address"></ion-input>
+  </ion-item>
+ </ion-card>
+	<!-- Save button to confirm add data to database-->
+ 	  <button ion-button block (click)="saveNew(contact)" color="lightgold">
+			<b>Save New contact</b>
+      </button>
+</ion-content>

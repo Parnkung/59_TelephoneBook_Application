@@ -1,0 +1,28 @@
+<ion-header >
+  <ion-toolbar color="burntamber">
+	<!--title-->
+    <ion-title>
+	<ion-icon name="ios-call" item-start></ion-icon>
+      Phone Book
+	 <ion-icon name="ios-book" item-end></ion-icon>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding style="background-color: darkslategray" class="card-background-page">
+  <!--show image-->
+  <ion-card>
+    <img src="assets/image/phonebook.jpg"/>
+    <div class="card-title">Phone Book</div>
+    <div class="card-subtitle">Make your contact EASY!</div>
+  </ion-card>
+  <!--if click this button, go to all-contact page-->
+  <button ion-button block (click)="openAll()" color="lightgold">
+        <span ion-text color="dark"><b>See All Contacts</b></span>
+  </button>
+  <!--if click this button, go to create-contact page-->
+   <button ion-button block (click)="addContact()" color="lightgold">
+        <span ion-text color="dark"><b>Create New Contact</b></span>
+  </button>
+</ion-content>
