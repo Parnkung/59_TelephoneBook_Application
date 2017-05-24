@@ -1,5 +1,5 @@
 # 59_TelephoneBook_Application
-Ionic_Project
+
 We created this repository for sending our ionic project, TelephoneBook Application 
 We have to apologize for can not include files there are 
 node_modules folder
